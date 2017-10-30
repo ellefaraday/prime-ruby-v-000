@@ -19,7 +19,7 @@ def prime?(num)
   end
 end
 
-puts prime?(15)
+puts prime?(23)
 
 #checks needs to contain all prime number up to num
 #take range 1..num
