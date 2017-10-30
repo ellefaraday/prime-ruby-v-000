@@ -11,7 +11,6 @@ def prime?(num)
         checks << x
       end
     }
-    binding.pry
     if checks.last == num
       true
     else
