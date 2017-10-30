@@ -6,22 +6,10 @@ def prime?(num)
     checks = [2]
     range = (2..num).to_a
     range.each {|x|
-      prime = true
-      i = 0
-      while prime && i < checks.length
-        if x % checks[i] == 0 && x != checks[i]
-          prime = false
-        else
-          i += 1
-        end
-        if prime
-          checks << x
-        end
+      if checks.any? {|check| x % check == 0}
+      else
+        checks << x
       end
-      #if checks.any? {|check| x % check == 0}
-      #else
-        #checks << x
-      #end
     }
     binding.pry
     if checks.last == num
@@ -38,3 +26,16 @@ puts prime?(4)
 #take range 1..num
 #check each num in ranges for prime, based on similar to above, if yes add to checks
 #for num, check against all primes in range
+
+#prime = true
+#i = 0
+#while prime && i < checks.length
+  #if x % checks[i] == 0 && x != checks[i]
+  #  prime = false
+  #else
+  #  i += 1
+  #end
+#  if prime
+#    checks << x
+#  end
+#end
