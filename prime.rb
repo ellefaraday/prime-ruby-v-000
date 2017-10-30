@@ -3,15 +3,15 @@ def prime?(num)
   if num.negative? || num == 1 || num == 0
     false
   else
-    checks = []
+    primes = []
     range = (2..num).to_a
     range.each {|x|
-      if checks.any? {|check| x % check == 0}
+      if primes.any? {|prime| x % prime == 0}
       else
-        checks << x
+        primes << x
       end
     }
-    if checks.last == num
+    if primes.last == num
       true
     else
       false
